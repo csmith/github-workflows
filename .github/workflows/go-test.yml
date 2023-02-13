@@ -1,0 +1,25 @@
+name: Test Go project
+
+on:
+  workflow_call:
+    inputs:
+      package:
+        required: false
+        type: string
+        default: './...'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: stable
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: go test ${{inputs.package}}
