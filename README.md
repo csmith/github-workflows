@@ -32,7 +32,7 @@ on:
   push:
     branches:
       - master
-    pull_request:
+  pull_request:
 jobs:
   build:
     uses: csmith/github-workflows/.github/workflows/go-test.yml@master
