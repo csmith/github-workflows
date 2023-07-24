@@ -37,3 +37,20 @@ jobs:
   build:
     uses: csmith/github-workflows/.github/workflows/go-test.yml@master
 ```
+
+## go-vulncheck.yml
+
+Installs the latest version of [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck)
+and runs it on a package. Example usage:
+
+```yaml
+name: check for go vulnerabilities
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  build:
+    uses: csmith/github-workflows/.github/workflows/go-vulncheck.yml@master
+```
