@@ -1,0 +1,25 @@
+name: Build Go project
+
+on:
+  workflow_call:
+    inputs:
+      package:
+        required: false
+        type: string
+        default: './...'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: stable
+
+      - name: Build
+        run: go build ${{inputs.package}}

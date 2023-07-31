@@ -21,6 +21,23 @@ jobs:
     secrets: inherit
 ```
 
+## go-build.yml
+
+Installs the current stable version of Go and builds a package.
+Example usage:
+
+```yaml
+name: build go project
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  build:
+    uses: csmith/github-workflows/.github/workflows/go-build.yml@master
+```
+
 ## go-test.yml
 
 Installs the current stable version of Go and runs all tests in a package.
