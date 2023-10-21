@@ -21,6 +21,20 @@ jobs:
     secrets: inherit
 ```
 
+## container-test.yml
+
+Builds a container image using buildah, without pushing it anywhere.
+Example usage:
+
+```yaml
+name: check container build
+on:
+  pull_request:
+jobs:
+  build:
+    uses: csmith/github-workflows/.github/workflows/container-test.yml@master
+```
+
 ## go-build.yml
 
 Installs the current stable version of Go and builds a package.
