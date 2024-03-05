@@ -18,7 +18,7 @@ jobs:
 
       - name: Build image
         id: build-image
-        uses: redhat-actions/buildah-build@v2.12
+        uses: redhat-actions/buildah-build@v2.13
         with:
           dockerfiles: ${{ inputs.dockerfile }}
           image: test
