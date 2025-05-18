@@ -7,6 +7,10 @@ on:
         required: false
         type: string
         default: './...'
+      tags:
+        required: false
+        type: string
+        default: ''
 
 jobs:
   test:
@@ -22,4 +26,4 @@ jobs:
           go-version: stable
 
       - name: Test
-        run: go test ${{inputs.package}}
+        run: go test -tags "${{inputs.tags}}" ${{inputs.package}}
