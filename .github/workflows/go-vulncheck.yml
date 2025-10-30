@@ -23,5 +23,4 @@ jobs:
 
       - name: Check for vulnerabilities
         run: |
-          go install golang.org/x/vuln/cmd/govulncheck@latest
-          govulncheck ./...
+          go run golang.org/x/vuln/cmd/govulncheck@latest -- "${{inputs.package}}"
