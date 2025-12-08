@@ -1,5 +1,9 @@
 name: Build and push container
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   workflow_call:
     inputs:

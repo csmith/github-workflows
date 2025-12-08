@@ -1,5 +1,8 @@
 name: Check that a container builds
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
     inputs:

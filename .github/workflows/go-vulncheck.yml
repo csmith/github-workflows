@@ -1,5 +1,8 @@
 name: Check Go project for vulnerabilities
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
     inputs:
