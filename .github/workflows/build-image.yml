@@ -16,7 +16,7 @@ on:
         type: string
         default: ${{ github.repository }}
     secrets:
-      GH_TOKEN:
+      GITHUB_TOKEN:
         description: 'Token to use to retrieve tag information'
         required: true
 
