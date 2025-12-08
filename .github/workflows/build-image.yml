@@ -22,13 +22,13 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
 
       - name: Generate tags
         id: tags
-        uses: greboid/docker-tags-action@v6.0.4
+        uses: greboid/docker-tags-action@f6d51fdbd4e96982865c5b1bb1013b3c6877a759 # v6.0.4
         with:
           separator: ' '
           fullname: 'false'
@@ -36,7 +36,7 @@ jobs:
 
       - name: Build image
         id: build-image
-        uses: redhat-actions/buildah-build@v2.13
+        uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2.13
         with:
           dockerfiles: ${{ inputs.dockerfile }}
           image: ${{ inputs.image }}
@@ -46,7 +46,7 @@ jobs:
             0
 
       - name: Push to GHCR
-        uses: redhat-actions/push-to-registry@v2.8
+        uses: redhat-actions/push-to-registry@5ed88d269cf581ea9ef6dd6806d01562096bee9c # v2.8
         with:
           image: ${{ steps.build-image.outputs.image }}
           registry: ghcr.io
