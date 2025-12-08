@@ -15,10 +15,6 @@ on:
         required: false
         type: string
         default: ${{ github.repository }}
-    secrets:
-      GITHUB_TOKEN:
-        description: 'Token to use to retrieve tag information'
-        required: true
 
 jobs:
   docker:

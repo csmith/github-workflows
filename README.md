@@ -18,8 +18,7 @@ on:
 jobs:
   build:
     uses: csmith/github-workflows/.github/workflows/build-image.yml@master
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
 ```
 
 ## container-test.yml
