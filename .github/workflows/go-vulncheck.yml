@@ -28,4 +28,6 @@ jobs:
 
       - name: Check for vulnerabilities
         run: |
-          go run golang.org/x/vuln/cmd/govulncheck@latest -- "${{inputs.package}}"
+          go run golang.org/x/vuln/cmd/govulncheck@latest -- "${INPUTS_PACKAGE}"
+        env:
+          INPUTS_PACKAGE: ${{inputs.package}}

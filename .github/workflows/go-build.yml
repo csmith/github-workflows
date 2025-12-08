@@ -27,4 +27,6 @@ jobs:
           go-version: stable
 
       - name: Build
-        run: go build ${{inputs.package}}
+        run: go build ${INPUTS_PACKAGE}
+        env:
+          INPUTS_PACKAGE: ${{inputs.package}}

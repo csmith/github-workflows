@@ -31,4 +31,7 @@ jobs:
           go-version: stable
 
       - name: Test
-        run: go test -tags "${{inputs.tags}}" ${{inputs.package}}
+        run: go test -tags "${INPUTS_TAGS}" ${INPUTS_PACKAGE}
+        env:
+          INPUTS_TAGS: ${{inputs.tags}}
+          INPUTS_PACKAGE: ${{inputs.package}}
